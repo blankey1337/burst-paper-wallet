@@ -1,4 +1,4 @@
-<mat-horizontal-stepper #stepper linear [linear]="true" [selectedIndex]="this.accountService.getStepIndex()" labelPosition="bottom">
+<mat-horizontal-stepper #stepper linear [linear]="true" [selectedIndex]="this.accountService.getStepIndex()" labelPosition="bottom" class="stepper">
     <mat-step [completed]="this.accountService.isPassphraseGenerated()" [editable]="!this.accountService.isPassphraseGenerated()">
         <ng-template class="noprint" matStepLabel>Generate Passphrase</ng-template>
         <div class="step-container">
