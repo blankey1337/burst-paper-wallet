@@ -1,0 +1,16 @@
+<mat-horizontal-stepper #stepper linear [linear]="true" [selectedIndex]="this.accountService.getStepIndex()" labelPosition="bottom">
+    <mat-step [completed]="this.accountService.isPassphraseGenerated()" [editable]="!this.accountService.isPassphraseGenerated()">
+        <ng-template class="noprint" matStepLabel>Generate Passphrase</ng-template>
+        <div class="step-container">
+          <app-seed></app-seed>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel class="noprint">Print</ng-template>
+        <div class="step-container">
+          <ng-container *ngIf="this.accountService.account.value">
+            <app-print></app-print>
+          </ng-container>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

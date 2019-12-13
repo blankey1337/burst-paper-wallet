@@ -1,0 +1,63 @@
+<div class="passphrase-hint amber-600-bg">
+  <div class="hint" fxHide fxShow.gt-sm>
+    <mat-icon>notification_important</mat-icon>
+  </div>
+  <div class="hint-help-text">
+    <h3 class="font-weight-700">
+      This wallet was generated in a browser. Do not send large amounts to this wallet!
+    </h3>
+  </div>
+</div>
+
+<div class="qr">
+  <img src="https://wallet1.burst-team.us:2083{{imgSrc}}" />
+</div>
+
+<div class="public">
+  <div class="row">
+    <div class="table__label">
+      Burst Address:
+    </div>
+    <div class="table__text">
+      {{ account.accountRS }}
+    </div>
+  </div>
+</div>
+
+<div class="private">
+  <div class="row">
+    <div class="table__label">
+      Passphrase:
+    </div>
+    <div class="table__text unselectable">
+      {{ this.accountService.getCompletePassphrase() }}
+    </div>
+    <!-- <div>
+      <button class="copy-button" matTooltip="Click to copy passphrase" mat-raised-button (click)="copy()">
+        <mat-icon>file_copy</mat-icon>
+      </button>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="table__label">
+      Private Key:
+    </div>
+    <div class="table__text">
+      {{ account.keys.signPrivateKey }}
+    </div>
+  </div>
+</div>
+
+<img src="../../assets/images/burst_paper_wallet.png" class="bg" />
+
+<small>Note: This account has not yet been registered on the blockchain, so it is not yet fully secure. To protect it, please make an outgoing transaction from this account.</small>
+
+<div class="navigation noprint">
+
+  <button class="print-button" matTooltip="Click to print" mat-raised-button (click)="print()">
+    <mat-icon>print</mat-icon> Print
+  </button>
+
+  <button class="btn-danger" mat-raised-button (click)="reset()">Back</button>
+
+</div>
