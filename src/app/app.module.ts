@@ -8,6 +8,7 @@ import { AccountService } from './account.service';
 import { CreateComponent } from './create/create.component';
 
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +19,7 @@ import { ApiService } from './api.service';
 import { PrintComponent } from './print/print.component';
 
 @NgModule({
-  imports:      [ MatButtonModule, MatCardModule, BrowserAnimationsModule, MatIconModule, MatStepperModule, BrowserModule, FormsModule, MatProgressBarModule ],
+  imports:      [ MatInputModule, MatButtonModule, MatCardModule, BrowserAnimationsModule, MatIconModule, MatStepperModule, BrowserModule, FormsModule, MatProgressBarModule ],
   declarations: [ AppComponent, SeedComponent, CreateComponent, PrintComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AccountService, ApiService]
